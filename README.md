@@ -16,6 +16,8 @@ Use a 'ForEach' activity inside a sequence to iterate through all items in the l
  2. Use an 'If' activity to verify if the item's month is the same with the current month: TmpDate.Month = DateTime.Now.Month:
     -- If the condition is met, print a message using the 'Write Line' activity and the 'String.Format' method.
     -- If the condition is not met, add a sequence with the following activities and methods: 
+    
        a. Create a new variable of TimeSpan type ("TimeDifference") calculate the difference between the current month and the item's month using the 'Subtract' method in an 'Assign' activity: TimeDifference = Datetime.Now.Subtract(new DateTime(Datetime.Now.Year, TmpDate.Month, TmpDate.Day))
+       
        b. Use an 'If' activity to verify if the date is in the future or in the past, by stating the condition as TimeDifference.Days > 0 and print a different message for when the month has passed or is in the future using the 'String.Format' method in a 'Write Line' activity: String.Format( "{0} days until the date {1}", Math.Abs(TimeDifference.Days).ToString, TmpDate.Day.ToString+ "." + TmpDate.Month.ToString+"."+DateTime.Now.Year.ToString
  
